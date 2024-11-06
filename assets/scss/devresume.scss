@@ -11,10 +11,18 @@
 /*************************** Theme Colours****************************/
 // Define theme colour scheme
 $theme-color-primary: {{ .Site.Params.primaryColor | default "#54B689" }};
-$theme-text-color-primary: {{ .Site.Params.textPrimaryColor | default "#292929" }};
+$theme-text-color-primary: if({{ .Site.Params.darkMode }}, #fff, #292929);
 $theme-text-color-secondary: lighten($theme-text-color-primary, 15%);
 $theme-text-color-light: lighten($theme-text-color-primary, 40%);
 $theme-border-color:  lighten($theme-text-color-primary, 60%);
+
+$theme-color-background: if({{ .Site.Params.darkMode }}, #000, #fff);
+$theme-line-color: if({{ .Site.Params.darkMode }}, rgba(255, 255, 255, 0.1), rbga(0, 0, 0, 0.8));
+$theme-border-color: if({{ .Site.Params.darkMode }}, #fff, #000);
+$box-shadow-sm: 0 .125rem .25rem rgba($theme-border-color, .075) !default;
+$box-shadow: 0 .5rem 1rem rgba($theme-border-color, .15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($theme-border-color, .25) !default;
+$hr-border-color: rgba($theme-border-color, .2) !default;
 
 /*************************** Variables Section. *****************************/
 // Create variables to override the default value for variables used in the Bootstrap SCSS files.
@@ -44,7 +52,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $theme-text-color-secondary;
-
+	background-color: $theme-color-background;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -88,7 +96,7 @@ a.theme-link {
 
 /*********** Resume **********/
 .resume-wrapper {
-	border: 1px solid rgba(0, 0, 0, 0.025);
+	border: 1px solid $theme-line-color;
 }
 
 .resume-section-heading {
@@ -123,7 +131,7 @@ a.theme-link {
 }
 
 .resume-contact {
-	border-left: 1px solid rgba(0, 0, 0, 0.08);
+	border-left: 1px solid $theme-line-color;
 	font-size: 0.75rem;
 }
 
@@ -155,7 +163,7 @@ a.resume-link {
 }
 
 .resume-aside {
-	border-left: 1px solid rgba(0, 0, 0, 0.08);
+	border-left: 1px solid $theme-line-color;
 	.item {
 		font-size: 0.875rem;
 	}

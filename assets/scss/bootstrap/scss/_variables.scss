@@ -238,9 +238,9 @@ $border-radius-sm:            .2rem !default;
 
 $rounded-pill:                50rem !default;
 
-$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+// $box-shadow-sm:               0 .125rem .25rem rgba($white, .075) !default;
+// $box-shadow:                  0 .5rem 1rem rgba($white, .15) !default;
+// $box-shadow-lg:               0 1rem 3rem rgba($white, .25) !default;
 
 $component-active-color:      $white !default;
 $component-active-bg:         theme-color("primary") !default;
@@ -323,7 +323,7 @@ $blockquote-small-color:      $gray-600 !default;
 $blockquote-small-font-size:  $small-font-size !default;
 $blockquote-font-size:        $font-size-base * 1.25 !default;
 
-$hr-border-color:             rgba($black, .1) !default;
+// $hr-border-color:             rgba($white, .2) !default;
 $hr-border-width:             $border-width !default;
 
 $mark-padding:                .2em !default;
